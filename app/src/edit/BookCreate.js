@@ -1,4 +1,4 @@
-angular.module('myApp')
+angular.module('edit')
   .controller('BookCreateCtrl',function ($scope,  $location,BookDataService) {
     $scope.createBook = function(){
       BookDataService.createBook($scope.book)
@@ -8,5 +8,10 @@ angular.module('myApp')
           }
         });
     }
-
+  })
+  .directive('bookCreateView', function(){
+    return {
+      restrict: 'E',
+      templateUrl: 'src/edit/BookCreateView.html'
+    }
   });

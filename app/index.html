@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="myApp" ng-controller="AppCtrl">
 <head>
     <meta charset="utf-8">
     <title>myApp</title>
@@ -7,42 +7,36 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
-<header>
-    <h1>Ingentis BookMonkey</h1>
-</header>
-<div class="container" ng-view>
 
-</div>
-<footer>
-    <a href="#/book/new">Neues Buch</a>
-</footer>
+
 <!-- 3rd-Party Libs -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 
 <!-- Components -->
-<script src="components/colorpicker/src/scripts/module.js"></script>
-<script src="components/colorpicker/src/scripts/colorsCtrl.js"></script>
-<script src="components/colorpicker/src/scripts/colorpickerDirective.js"></script>
+<script src="components/colorpicker/src/colorpicker.js"></script>
 
 
 
 <!-- Application Files -->
-<script src="scripts/app.js"></script>
+<script src="src/app.js"></script>
+<script src="src/app-frame.js"></script>
 
-<script src="scripts/directives/BookListDirective.js"></script>
-<script src="scripts/directives/BookFormDirective.js"></script>
-<script src="scripts/directives/BookCreateViewDirective.js"></script>
-<script src="scripts/directives/BookEditViewDirective.js"></script>
+<script src="src/data/module.js"></script>
+<script src="src/data/UserService.js"></script>
+<script src="src/data/BookDataService.js"></script>
 
-<script src="scripts/controllers/BookListCtrl.js"></script>
-<script src="scripts/controllers/BookDetailCtrl.js"></script>
-<script src="scripts/controllers/BookEditCtrl.js"></script>
-<script src="scripts/controllers/BookCreateCtrl.js"></script>
-<script src="scripts/services/userService.js"></script>
-<script src="scripts/services/BookDataService.js"></script>
-<script src="scripts/_configs/routeConfig.js"></script>
+<script src="src/show/module.js"></script>
+<script src="src/show/BookList.js"></script>
+<script src="src/show/BookDetail.js"></script>
+
+<script src="src/edit/module.js"></script>
+<script src="src/edit/BookForm.js"></script>
+<script src="src/edit/BookEdit.js"></script>
+<script src="src/edit/BookCreate.js"></script>
+
+<app-frame></app-frame>
+
 </body>
 </html>

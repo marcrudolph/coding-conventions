@@ -1,5 +1,5 @@
 angular.module('myApp')
-  .factory('userService', function () {
+  .factory('UserService', function () {
 
     var user = {
       name: 'Robin',

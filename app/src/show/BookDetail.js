@@ -1,4 +1,4 @@
-angular.module('myApp')
+angular.module('show')
   .controller('BookDetailCtrl',function ($scope, $routeParams, $location,BookDataService) {
     $scope.isbn = $routeParams.isbn;
 

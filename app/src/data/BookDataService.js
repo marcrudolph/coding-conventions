@@ -1,7 +1,7 @@
-angular.module('myApp')
+angular.module('data')
   .factory('BookDataService', function ($http) {
 
-    var serverUrl = 'http://ajs-workshop.herokuapp.com/api/books/';
+    var serverUrl = 'http://ajs-workshop.herokuapp.com/apix/books/';
 
     return {
       getBooks: function () {

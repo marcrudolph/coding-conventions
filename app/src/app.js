@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('myApp', ['ngRoute', 'data', 'show', 'edit']);
+angular.module('app', ['ngRoute', 'app.data', 'app.show', 'app.edit']);
 
 
 

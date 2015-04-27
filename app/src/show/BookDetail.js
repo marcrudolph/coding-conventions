@@ -1,16 +1,16 @@
-angular.module('show')
-  .controller('BookDetailCtrl',function ($scope, $routeParams, $location,BookDataService) {
+angular.module('app.show')
+  .controller('BookDetailCtrl',function ($scope, $routeParams, $location, BookDataManager) {
     $scope.isbn = $routeParams.isbn;
 
 
-    BookDataService.getBookByIsbn($routeParams.isbn)
+    BookDataManager.getBookByIsbn($routeParams.isbn)
       .then(function(book){
         $scope.book = book;
       });
 
 
     $scope.saveBook = function(){
-      BookDataService.save($scope.book)
+      BookDataManager.save($scope.book)
         .then(function(success){
           if(success){
             $location.path('/');

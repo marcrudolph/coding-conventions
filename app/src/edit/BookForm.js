@@ -1,4 +1,4 @@
-angular.module('edit')
+angular.module('app.edit')
 .directive('bookForm', function(){
 	return {
 	  restrict: 'E',

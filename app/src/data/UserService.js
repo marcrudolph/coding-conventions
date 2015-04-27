@@ -1,4 +1,4 @@
-angular.module('myApp')
+angular.module('app.data')
   .factory('UserService', function () {
 
     var user = {

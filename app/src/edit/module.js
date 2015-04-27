@@ -1,16 +1,15 @@
 "use strict";
 
-angular.module('edit', ['data'])
+angular.module('app.edit', ['app.data'])
 .config(function($routeProvider) {
 
 $routeProvider
 	.when('/book/new/_',{
-		template: '<book-create-view></book-create-view>',
+		template: '<book-create></book-create>',
 		controller: 'BookCreateCtrl'
 	})
 	.when('/book/:isbn/edit',{
-		template: '<book-edit-view></book-edit-view>',
-		controller: 'BookEditCtrl',
-		resolve: BookEditCtrl.resolve
+		template: '<book-edit></book-edit>',
+		controller: 'BookEditCtrl'
 	});
 });

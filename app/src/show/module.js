@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('show', ['data'])
+angular.module('app.show', ['app.data'])
 .config(function($routeProvider) {
 
 $routeProvider

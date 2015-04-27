@@ -1,13 +1,13 @@
-angular.module('show')
+angular.module('app.show')
     .controller('BookListCtrl', BookListCtrl)
     .directive('bookList', bookList);
 
 
-BookListCtrl.$inject = ['$scope', '$rootScope', 'BookDataService'];
-function BookListCtrl($scope, $rootScope, BookDataService) {
+BookListCtrl.$inject = ['$scope', '$rootScope', 'BookDataManager'];
+function BookListCtrl($scope, $rootScope, BookDataManager) {
     $scope.books = null;
 
-    BookDataService.getBooks()
+    BookDataManager.getBooks()
     .then(function(data){
         $scope.books = data;
     });

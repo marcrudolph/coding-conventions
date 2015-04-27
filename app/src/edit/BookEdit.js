@@ -1,20 +1,23 @@
-angular.module('edit')
+angular.module('app.edit')
     .controller('BookEditCtrl', BookEditCtrl)
-    .directive('bookEditView', bookEditView);
+    .directive('bookEdit', bookEdit);
 
-BookEditCtrl.$inject = ['$scope', '$location', '$routeParams', 'BookDataService', 'book'];
-function BookEditCtrl($scope, $location, $routeParams, BookDataService, book) {
-    $scope.book = book;
+BookEditCtrl.$inject = ['$scope', '$location', '$routeParams', 'BookDataManager'];
+function BookEditCtrl($scope, $location, $routeParams, BookDataManager) {
+    $scope.book = null;
     $scope.saveBook = saveBook;
 
+    init();
 
-    // BookDataService.getBookByIsbn($routeParams.isbn)
-    // .then(function(book){
-    //     $scope.book = book;
-    // });
+    function init() {
+        BookDataManager.getBookByIsbn($routeParams.isbn)
+        .then(function(book) {
+            $scope.book = book;
+        });
+    }
 
     function saveBook(){
-        BookDataService.saveBook($scope.book)
+        BookDataManager.saveBook($scope.book)
         .then(function(success){
             if(success){
                 $location.path('/');
@@ -23,21 +26,13 @@ function BookEditCtrl($scope, $location, $routeParams, BookDataService, book) {
     }
 }
 
-BookEditCtrl.resolve = {
-    book: resolveBook
-}
-resolveBook.$inject = ['$route', 'BookDataService'];
-function resolveBook($route, BookDataService) {
-    return BookDataService.getBookByIsbn($route.current.params.isbn)
-}
 
 
 
-
-function bookEditView(){
+function bookEdit(){
     return {
         restrict: 'E',
-        templateUrl: 'src/edit/BookEditView.html'
+        templateUrl: 'src/edit/BookEdit.html'
     }
 }
 

@@ -1,7 +1,7 @@
-angular.module('edit')
-  .controller('BookCreateCtrl',function ($scope,  $location,BookDataService) {
+angular.module('app.edit')
+  .controller('BookCreateCtrl',function ($scope,  $location, BookDataManager) {
     $scope.createBook = function(){
-      BookDataService.createBook($scope.book)
+      BookDataManager.createBook($scope.book)
         .then(function(success){
           if(success){
             $location.path('/');
@@ -9,9 +9,9 @@ angular.module('edit')
         });
     }
   })
-  .directive('bookCreateView', function(){
+  .directive('bookCreate', function(){
     return {
       restrict: 'E',
-      templateUrl: 'src/edit/BookCreateView.html'
+      templateUrl: 'src/edit/BookCreate.html'
     }
   });

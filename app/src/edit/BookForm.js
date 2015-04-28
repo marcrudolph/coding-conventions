@@ -1,7 +1,7 @@
-angular.module('app.edit')
+angular.module('edit')
 .directive('bookForm', function(){
-	return {
-	  restrict: 'E',
-	  templateUrl: 'src/edit/BookForm.html'
-	}
-});
+    return {
+      restrict: 'E',
+      templateUrl: 'src/edit/BookForm.html'
+    }
+  });

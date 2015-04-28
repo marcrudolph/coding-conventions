@@ -1,1 +1,1 @@
-angular.module('app.data', []);
+angular.module('data', []);
